@@ -1,0 +1,6 @@
+SELECT title FROM shows WHERE id IN(SELECT show_id FROM ratings ORDER BY "ratings" DESC LIMIT 5);
+> SELECT genre FROM people
+   ...> JOIN stars ON stars.person_id = people.id
+   ...> JOIN shows ON shows.id = stars.show_id
+   ...> JOIN genres ON genres.show_id = shows.id
+   ...> WHERE people.name LIKE "%Robert Downey%";
